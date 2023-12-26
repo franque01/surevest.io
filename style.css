@@ -86,6 +86,12 @@ h2{
     width: 35px;
     height: 20px;
 }
+#menu-bar{
+    cursor: pointer;
+}
+.display{
+    display: none !important;
+}
 header{
     position: relative;
     width: 100%;
@@ -160,6 +166,9 @@ header{
                 /* gap: 2rem; */
                 width: 70%;
                 padding: 0px 2.3rem;
+                & :hover{
+                    color: var(--primary-color);
+                }
                 & li{
                     .menu{
                         display: inline-block;
@@ -183,8 +192,8 @@ header{
             background-color: var(--secondary-color);
             align-self: center;
             transform: rotate(45deg) translateY(-5rem) translateX(-5rem);
-            position: absolute;
-            
+            position: fixed !important;
+            z-index: -1;
         }
         .hero-txt{
             position: relative;
@@ -620,7 +629,24 @@ footer{
     }
 }
 @media (max-width: 1070px) {
-    
+    .menu_layer_1{
+        width: 20%;
+        height: 200px;
+        background-color: rgb(0, 46, 0);
+        position: absolute;
+        right: 1rem;
+        top: 6rem;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column !important;
+        padding-top: 2rem;
+            .bar-icon{
+            display: inline-block;
+            height: 5rem;
+        }
+    }
     .bar-icon{
         display: none;
     }
@@ -782,6 +808,35 @@ footer{
             margin-right: 1rem;
         }
     }
+    .close-btn{
+        display: none;
+    }
+    .menu_layer_1{
+        display: none;
+    }
+    .menu_layer_2{
+        position: fixed;
+        display: inline-block;
+        flex-direction: column;
+        width: 40%;
+        height: 85vh;
+        background-color: rgb(0, 46, 0);
+        position: absolute;
+        z-index: 999;
+        top: 6.5rem;
+        right: 0px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        padding-top: 3rem;
+        padding-right: 1rem;
+        .bar-icon{
+            display: block;
+        }
+        .links{
+            height: 5rem;
+        }
+    }
 
     .about{
         height: 1500px !important;
@@ -836,6 +891,7 @@ footer{
     .btn{
         font-size: 15px !important;
         padding: 8px 1.5rem !important;
+        transform: translateY(-2rem);
     }
     
     .article-row .article-col-1{
@@ -887,8 +943,6 @@ footer{
             }
         }
     }
-}
-@media (max-width: 561px) {
     header{
         background-image: linear-gradient(to bottom, rgba(91, 97, 82, 0.199), rgba(0, 0, 0, 0.966)), url('./images/bg-invest.jpg');
 
@@ -914,8 +968,13 @@ footer{
             }
             & h1{
                 /* background-color: rgba(240, 248, 255, 0.349); */
-                height: 10rem !important;
+                height: 3rem !important;
                 font-weight: bold !important;
+            }
+            & p{
+                display: inline-block !important;
+                padding: 0px 1rem;
+                height: 10rem;
             }
             .hero-btn{
                 font-size: 18px !important;
@@ -924,12 +983,16 @@ footer{
             }
         }
     }
-    .upper-nav{
-        display: none !important;
-    }
     .angle-block{
         display: none !important;
     }
+}
+@media (max-width: 561px) {
+    
+    .upper-nav{
+        display: none !important;
+    }
+    
     .article-row{
         height: 1100px !important; 
     }
@@ -998,6 +1061,26 @@ footer{
         font-size: 90% !important;
         height: 56px;
     }
+
+    
+    .menu_layer_2{
+        position: fixed;
+        width: 70%;
+        height: 100vh;
+        top: 0px !important;
+        .close-btn{
+            background-color: rgba(2, 10, 0, 0.329);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            right: 2rem;
+            top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 }
 @media (max-width: 398px) {
     h1{
@@ -1028,5 +1111,24 @@ footer{
     footer{
         font-size: 80% !important;
         height: 56px;
+    }
+
+    .menu_layer_2{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0px !important;
+        .close-btn{
+            background-color: rgba(2, 10, 0, 0.329);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            right: 2rem;
+            top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
