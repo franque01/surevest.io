@@ -5,13 +5,33 @@
     list-style-type: none;
     text-decoration: none;
     font-family:'Segoe UI', Tahoma;
-    
+    scroll-behavior: smooth;
 }
 :root{
     --primary-color: greenyellow;
     --secondary-color: green;
     --white-txt: white;
     --ash-txt-color: rgb(241, 241, 241);
+}
+.top{
+    position: fixed;
+    right: 2rem;
+    bottom: 1px;
+    transform: translateY(-5rem);
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    z-index: 999;
+    box-shadow: 0px 0px 3px 2px var(--primary-color);
+}
+.close-btn{
+    cursor: pointer;
 }
 .white-txt{
     color: var(--white-txt);
@@ -818,7 +838,7 @@ footer{
         position: fixed;
         display: inline-block;
         flex-direction: column;
-        width: 40%;
+        width: 60%;
         height: 85vh;
         background-color: rgb(0, 46, 0);
         position: absolute;
@@ -870,21 +890,21 @@ footer{
 @media (max-width: 636px) {
     .hero{
         height: 100% !important;
-        .angle-block{
-            width: 24rem !important;
-            height: 24rem !important;
-            transform: translateY(-15rem) rotate(45deg) !important;
-        }
         .hero-txt{
-            transform: translateY(-10rem) !important;
+            height: inherit !important;
             .welcome{
                 font-size: 24px !important;
+                transform: translateY(-4rem);
             }
             & h1{
                 font-size: 32px !important;
+                transform: translateY(-5rem);
             }
-            .btn{
-                transform: translateY(-30px);
+            & P{
+                transform: translateY(-4.5rem);
+            }
+            .btn{  
+                transform: translateY(-3rem) !important;
             }
         }
     }
